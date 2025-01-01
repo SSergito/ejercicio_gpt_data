@@ -23,6 +23,20 @@ print(df.sort_values(by="date",ascending=True))
 print(f"Precio promedio de ventas: {df["price"].mean():.2f}")
 ##### Extra a la pregunta quiero hallar el precio promedio por cada producto
 precios_promedio = df.groupby("product")["price"].mean()
-
 for producto, promedio in precios_promedio.items():
     print(f"Precio promedio de {producto}: {promedio:.2f}")
+
+# Extrae el año y mes de las fechas de transacción en una nueva columna
+df["date"] = pd.to_datetime(df["date"], errors="coerce")
+df["Year-Month"] = df["date"].dt.to_period("M").astype(str)
+print(df["Year-Month"])
+
+# Identifica cuántos productos únicos hay en el dataset
+print(f"Número de productos únicos: {len(df["product"].unique())}")
+
+# Encuentra el producto más caro vendido
+most_expensive = df.loc[df["price"] == df["price"].max()]
+print("Producto más caro vendido:")
+print(most_expensive)
+
+# Genera un resumen estadístico (mean, std, min, max) de la columna precio
