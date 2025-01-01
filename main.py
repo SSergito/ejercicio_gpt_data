@@ -9,3 +9,7 @@ print(df.info())
 print(df.isnull().sum())
 
 # Cuenta el número total de filas y columnas en el dataset
+rows, columns = df.shape
+print(f"Número de filas: {rows}\nNúmero de columnas: {columns}")
+
+# Filtra las transacciones para un producto específico
