@@ -1,0 +1,43 @@
+Nivel 1: Exploración y preparación de datos (1-10)
+Carga el dataset en un DataFrame de pandas y muestra las primeras 10 filas.
+Obtén un resumen de las columnas, tipos de datos y valores nulos.
+Cuenta el número total de filas y columnas en el dataset.
+Filtra las transacciones para un producto específico.
+Ordena las transacciones por fecha.
+Calcula el precio promedio de los productos vendidos.
+Extrae el año y mes de las fechas de transacción en una nueva columna.
+Identifica cuántos productos únicos hay en el dataset.
+Encuentra el producto más caro vendido.
+Genera un resumen estadístico (mean, std, min, max) de la columna precio.
+
+Nivel 2: Transformaciones y análisis intermedios (11-20)
+Reemplaza los valores faltantes en una columna específica con un valor por defecto.
+Crea una columna que calcule el ingreso total (precio x cantidad).
+Agrupa las transacciones por categoría y calcula el ingreso total por categoría.
+Encuentra el día con las mayores ventas.
+Identifica el top 5 de productos más vendidos.
+Genera un gráfico de barras que muestre las ventas mensuales.
+Calcula el porcentaje de ventas por categoría.
+Identifica las transacciones donde se compraron más de 5 unidades.
+Filtra las ventas entre dos rangos de fechas específicos.
+Crea un gráfico de línea para visualizar el total de ventas acumuladas a lo largo del tiempo.
+
+Nivel 3: Análisis avanzado y visualizaciones (21-30)
+Detecta y elimina valores duplicados en el dataset.
+Calcula una correlación entre la cantidad de productos vendidos y el precio.
+Identifica las categorías con más ventas y genera un gráfico de pastel.
+Implementa una función personalizada para categorizar productos en "Alta Demanda" y "Baja Demanda".
+Aplica un filtro para analizar solo las transacciones de "Alta Demanda".
+Crea un gráfico combinado (línea y barras) para comparar ventas diarias y precios promedio.
+Usa un histograma para visualizar la distribución de precios.
+Simula un escenario de descuentos y calcula cómo cambiarían los ingresos totales.
+Genera una tabla pivot que muestre las ventas totales por mes y categoría.
+Haz un análisis final con conclusiones basadas en las visualizaciones generadas.
+
+CAMPOS:
+transaction_id: ID único para cada transacción.
+date: Fecha de la transacción.
+product: Nombre del producto vendido.
+category: Categoría del producto.
+price: Precio unitario del producto.
+quantity: Cantidad de unidades vendidas.
