@@ -1,4 +1,5 @@
 import pandas as pd
+import matplotlib.pyplot as plt
 
 # Carga el dataset en un DataFrame de pandas y muestra las primeras 10 filas
 df = pd.read_csv("sales_data.csv")
@@ -58,3 +59,10 @@ fecha_max = df.groupby(by="date")["ingreso_total"].sum().idxmax()
 print(fecha_max)
 
 # Identifica el top 5 de productos más vendidos
+sales_for_product = df.groupby(by="product")["quantity"].sum()
+print(sales_for_product.sort_values(ascending=False).head(5))
+
+# Genera un gráfico de barras que muestre las ventas mensuales
+sales_for_month = df.groupby(by="Year-Month")["ingreso_total"].sum()
+sales_for_month.plot(kind="bar")
+plt.show()
