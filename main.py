@@ -40,3 +40,21 @@ print("Producto más caro vendido:")
 print(most_expensive)
 
 # Genera un resumen estadístico (mean, std, min, max) de la columna precio
+print(df["price"].describe(percentiles=[])) # METODO 1
+print(df["price"].agg(['count', 'mean', 'std', 'min', 'max'])) # METODO 2
+
+# Reemplaza los valores faltantes en una columna específica con un valor por defecto
+df["quantity"] = df["quantity"].fillna(0)
+print(df["quantity"])
+
+# Crea una columna que calcule el ingreso total (precio x cantidad)
+df["ingreso_total"] = df["price"] * df["quantity"]
+
+# Agrupa las transacciones por categoría y calcula el ingreso total por categoría
+print(df.groupby(by="category")["ingreso_total"].sum())
+
+# Encuentra el día con las mayores ventas
+fecha_max = df.groupby(by="date")["ingreso_total"].sum().idxmax()
+print(fecha_max)
+
+# Identifica el top 5 de productos más vendidos
